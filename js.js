@@ -1,36 +1,37 @@
-       
+ 
        
        var contador_jugador=0;
        var contador_ordenador=0;
-       
+       var btnReiniciar = document.getElementById("boton-comenzar");
+       var plantado = false;
+   
        function ver(){
                   
             var numeroImagenes = 40;
             var numeroAleatorio = Math.floor(Math.random() * numeroImagenes ) + 1;
             var carta = "images/carta" + numeroAleatorio + ".gif";
+            
             document.getElementById("jugador").src = carta;
             var puntosjugador = document.getElementById("puntosjugador");
          
             
-            // asigna el valor de la carta aleatoria
+            // asigna el valor de la carta aleatoria jugador
             contador_jugador= contador_jugador + valor_carta(numeroAleatorio);
             puntosjugador.innerHTML = contador_jugador;
             
         
             var numeroAleatorio1 = Math.floor(Math.random() * numeroImagenes ) + 1;
             var carta1 = "images/carta" + numeroAleatorio1 + ".gif";
+            
             document.getElementById("ordenador").src = carta1;
             var puntosordenador = document.getElementById("puntosordenador");
             
+            // asigna el valor de la carta aleatoria ordenador
             contador_ordenador = contador_ordenador + valor_carta(numeroAleatorio1);
             puntosordenador.innerHTML = contador_ordenador;
             
-            if(contador_jugador <= 7.5 || contador_ordenador <= 7.5){
-                alert("has ganado!");
-                
-            }
-            
-            
+            ganadores();
+           
          }
           
             
@@ -61,7 +62,37 @@
             }
             
             return valor;
+                
+        }
+        
+        
+         function ganadores(){
             
+           if(contador_jugador > 0 && contador_jugador <= 7.5){
+                    alert("has ganado! Enhorabuena!!!!!!");
+           }
+           
+        }    
+        
+        
+        function plantar(){
             
+            if(plantado == true){
+             if(contador_jugador < 7.5){
+                alert("te has plantado!!");
+             } else{
+                 alert("no puedes jugar mas! Inicia una nueva partida!");
+             }  
             
         }
+            
+       
+            
+       
+        btnReiniciar.onclick = function(){
+          
+          window.location.reload(true);
+        } 
+        
+
+    ganadores();
