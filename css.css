@@ -1,0 +1,62 @@
+
+body {
+    background-image:  url("images/fondo.jpg");
+       
+}
+table{
+    margin-left: 700px;
+}
+
+table, td, tr{
+   
+    border: 5px solid white;
+    border-collapse: collapse;
+    width: 529px;
+    
+   
+}
+th, td {
+    text-align: center;
+    padding: 8px;
+}
+
+tr:nth-child(even){
+    background-color: #f2f2f2;
+    
+}
+
+th {
+    background-color: #FE2EC8;
+    color: black;
+    font-size: x-large;
+}
+
+#puntos{
+    width: 100%;
+}
+
+img{
+    min-height: 300px;
+    min-width: 300px;
+    max-height: 500px;
+    max-width: 500px;
+}
+
+td{
+   font-family: "Times New Roman", Georgia, Serif;;
+   font-size: xx-large;
+   color:#DF01A5;
+   font-weight: bold;
+   font-style: normal;
+  
+    
+}
+#puntosjugador, #puntosordenador{
+     background-color: #F6CEF5;
+}
+
+h2{
+    font-family: "Times New Roman", Georgia, Serif;;    
+    font-size: xx-large;
+    color: #BEF781;
+}
