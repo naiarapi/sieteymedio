@@ -49,7 +49,7 @@ td{
    font-weight: bold;
    font-style: normal;
   
-    
+   
 }
 #puntosjugador, #puntosordenador{
      background-color: #F6CEF5;
@@ -59,4 +59,16 @@ h2{
     font-family: "Times New Roman", Georgia, Serif;;    
     font-size: xx-large;
     color: #BEF781;
+}
+
+div{
+   font-family: "Times New Roman", Georgia, Serif;
+   font-size: xx-large;
+   color:#0040FF;
+   font-weight: bold;
+   font-style: normal;
+   margin-left: 725px;
+   margin-top: 100px;
+  
+   
 }
