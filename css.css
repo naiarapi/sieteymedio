@@ -1,10 +1,10 @@
 
 body {
-    background-image:  url("images/fondo.jpg");
+    background-image:url("images/fondo_juego.jpg");
        
 }
 table{
-    margin-left: 700px;
+    margin-left: 420px;
 }
 
 table, td, tr{
@@ -21,12 +21,12 @@ th, td {
 }
 
 tr:nth-child(even){
-    background-color: #f2f2f2;
+    background-color: white;
     
 }
 
 th {
-    background-color: #FE2EC8;
+    background-color: #c8d86d;
     color: black;
     font-size: x-large;
 }
@@ -45,30 +45,43 @@ img{
 td{
    font-family: "Times New Roman", Georgia, Serif;;
    font-size: xx-large;
-   color:#DF01A5;
+   color:black;
    font-weight: bold;
    font-style: normal;
   
    
 }
 #puntosjugador, #puntosordenador{
-     background-color: #F6CEF5;
+     background-color: #B2CF41;
 }
 
-h2{
+h3,p{
     font-family: "Times New Roman", Georgia, Serif;;    
     font-size: xx-large;
-    color: #BEF781;
+    color: black;
+    margin-left: 700px;
 }
 
 div{
    font-family: "Times New Roman", Georgia, Serif;
    font-size: xx-large;
-   color:#0040FF;
+   color:#B2CF41;
    font-weight: bold;
    font-style: normal;
-   margin-left: 725px;
-   margin-top: 100px;
-  
+   margin-left:500px;
    
+   
+}
+
+input, button{
+ border: none;
+ background: black;
+ color: white;
+ padding: 10px;
+ font-size: 18px;
+ border-radius: 5px;
+ position: relative;
+ width:300px;
+ height: 60px;
+
 }

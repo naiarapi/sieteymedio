@@ -22,10 +22,18 @@
             puntosjugador.innerHTML = contador_jugador;
             
             //si se pasa del 7.5 sacando cartas o si sale igual a 7.5
-            if(contador_jugador > 7.5){
-                resultado.innerHTML = "Has perdido! Vuelva a intentarlo";
-            }else if (contador_jugador == 7.5){
-                resultado.innerHTML = "Enhorabuena! Has ganado!";
+            if (contador_jugador == 7.5){
+                while(contador_ordenador < 7.5){
+                    sacar_ordenador();
+                }
+                //llama a la funcion ganadores 
+                ganadores(); 
+            }else if(contador_jugador > 7.5){
+                while(contador_ordenador < 7.5){
+                    sacar_ordenador();
+                }
+                //llama a la funcion ganadores 
+                ganadores();
             }
          }
          
@@ -83,31 +91,46 @@
                  resultado.innerHTML = "Te has plantado";
              }
              
+           
+             //mientras el contador del ordenador sea menor 7.5 llama a la funcion sacar_ordenador
+             while(contador_ordenador < 7.5){
+                    sacar_ordenador();
+             }
+            
+            //llama a la funcion ganadores 
+            ganadores(); 
+            
              //solo una unica vez puede plantarse y no puede volver a jugar. Debe de Iniciar una nueva partida
              document.getElementById("jugador").onclick = function(){
                  resultado.innerHTML = "No puedes jugar mas! Iniciar una nueva partida!";
              }
              
-             //mientras el contador del ordenador sea menor 7.5 llama a la funcion sacar_ordenador
-             while(contador_ordenador < 7.5){
-                    sacar_ordenador();
-             }
-
-            //llama a la funcion ganadores 
-            ganadores(); 
         }     
        
         function ganadores(){
             
          //establece cuando gana y pierde el jugador    
-         if(contador_ordenador > contador_jugador){
-             resultado.innerHTML = "Has ganado";
-           }else if(contador_ordenador < contador_jugador){
-              resultado.innerHTML = "Has perdido"; 
-           }else if (contador_ordenador == 7.5){
-               resultado.innerHTML = "Has perdido";
+         if(contador_ordenador <= 7.5 || contador_jugador > contador_ordenador){
+             resultado.innerHTML = "Has perdido";
+              document.getElementById("jugador").onclick = function(){
+                 resultado.innerHTML = "No puedes jugar mas! Iniciar una nueva partida!";
+             }
+             
+           }else if(contador_jugador <= 7.5 ||  contador_jugador < contador_ordenador){
+              resultado.innerHTML = "Has ganado"; 
+               document.getElementById("jugador").onclick = function(){
+                 resultado.innerHTML = "No puedes jugar mas! Iniciar una nueva partida!";
+             }
+           }else if(contador_jugador = contador_ordenador){
+               resultado.innerHTML = "Volver a jugar!Has perdido!";
+                document.getElementById("jugador").onclick = function(){
+                 resultado.innerHTML = "No puedes jugar mas! Iniciar una nueva partida!";
+             }
+                    
+            
            }
-        }    
+        } 
+
             
          //reinicia la pagina cuando clicka en el boton Nueva Partida    
          btnReiniciar.onclick = function(){
