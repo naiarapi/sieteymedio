@@ -1,16 +1,19 @@
+       
        //variables globales para el juego
        var contador_jugador=0;
        var contador_ordenador=0;
        var btnReiniciar = document.getElementById("boton-comenzar");
        var div = document.getElementsByTagName("div");
        var resultado= div[0];
+       var mensaje_plantar= div[1];
        var numeroImagenes = 40;
+      
        
        function ver(){
            
            //cartas aleatorias 
             var numeroAleatorio = Math.floor(Math.random() * numeroImagenes ) + 1;
-            var carta = "images/carta" + numeroAleatorio + ".gif";
+            var carta = "../images/carta" + numeroAleatorio + ".gif";
             
             //colocacion de las cartas aleatorias
             document.getElementById("jugador").src = carta;
@@ -101,10 +104,10 @@
             ganadores(); 
             
              //solo una unica vez puede plantarse y no puede volver a jugar. Debe de Iniciar una nueva partida
-             document.getElementById("jugador").onclick = function(){
-                 resultado.innerHTML = "No puedes jugar mas! Iniciar una nueva partida!";
-             }
              
+             document.getElementById("plantado").onclick = function(){
+                mensaje_plantar.innerHTML = "No puedes jugar mas! Iniciar una nueva partida!";
+            } 
         }     
        
         function ganadores(){
